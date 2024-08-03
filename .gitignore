@@ -88,3 +88,4 @@ Thumbs.db
 mnist-mlp
 
 # Any other project-specific files to ignore
+.cache/
