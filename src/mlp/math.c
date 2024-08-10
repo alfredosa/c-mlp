@@ -1,10 +1,23 @@
 #include "math.h"
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
-#define BAR_WIDTH 50
-#define PRECISION 4
+double **matrix_multiplication(double **m1, double **m2, int rows1, int cols1,
+                               int cols2) {
+  double **m3 = malloc(rows1 * sizeof(double *));
+  for (int i = 0; i < rows1; i++) {
+    m3[i] = malloc(cols2 * sizeof(double));
+    for (int j = 0; j < cols2; j++) {
+      m3[i][j] = 0;
+      for (int k = 0; k < cols1; k++) {
+        m3[i][j] += m1[i][k] * m2[k][j];
+      }
+    }
+  }
+  return m3;
+}
 
 void print_ascii_bar(const char *name, double value) {
   int filled_width = (int)(value * BAR_WIDTH);
@@ -54,3 +67,5 @@ void softmax(double *input, size_t input_len, double *output) {
     output[i] /= sum;
   }
 }
+
+double random_bet_zao() { return (double)rand() / (double)RAND_MAX; }

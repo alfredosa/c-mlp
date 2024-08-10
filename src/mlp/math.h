@@ -1,6 +1,10 @@
 #ifndef MMATH_H
-
 #define MMATH_H
+
+#include "nn.h"
+#define BAR_WIDTH 50
+#define PRECISION 6
+
 #include <float.h>
 #include <math.h>
 #include <stddef.h>
@@ -18,5 +22,12 @@ void print_activation_results(double sig, double relu, double yi,
                               double *softmax, int softmax_len);
 
 void softmax(double *input, size_t input_len, double *output);
+
+/* ZAO means Zero And ONE :) but sounds cooler.
+    Someone random bet on ZAO please. */
+double random_bet_zao();
+
+double **matrix_multiplication(double **m1, double **m2, int rows1, int cols1,
+                               int cols2);
 
 #endif // !MMATH_H
