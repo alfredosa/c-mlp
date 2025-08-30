@@ -1,5 +1,9 @@
 # THE PLAN
 
+> [!WARNING]
+> This project is now officially migrated to https://git.alfie.news/c-mlp
+> I will likely delete this sometime.
+
 ## Data Preparation
 - [x] Understanding the MNIST dataset structure
 - [x] Loading and normalizing the data
